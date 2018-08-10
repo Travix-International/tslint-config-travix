@@ -1,0 +1,23 @@
+{
+  "name": "tslint-config-travix",
+  "version": "0.0.1",
+  "description": "TSLint configuration from Travix",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Travix-International/tslint-config-travix.git"
+  },
+  "keywords": [
+    "tslint",
+    "typescript"
+  ],
+  "author": "Yuri Drabik <yurist38@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Travix-International/tslint-config-travix/issues"
+  },
+  "homepage": "https://github.com/Travix-International/tslint-config-travix#readme"
+}
