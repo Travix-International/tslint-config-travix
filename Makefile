@@ -1,7 +1,7 @@
 changelog:
 	git checkout master
 	git pull origin master
-	github_changelog_generator -t $(GITHUB_API_TOKEN)
+	github_changelog_generator -t ${GITHUB_API_TOKEN}
 
 push-changelog:
 	git checkout master
@@ -11,9 +11,9 @@ push-changelog:
 	git push origin master
 
 release:
-	echo "Releasing version: $(VERSION)"
+	echo "Releasing version: ${VERSION}"
 	git checkout master
 	git pull origin master
-	npm version $(VERSION)
+	npm version ${VERSION}
 	npm publish
 	git push --follow-tags
