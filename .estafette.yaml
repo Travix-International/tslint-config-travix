@@ -14,8 +14,8 @@ stages:
       - export NPM_AUTH_TOKEN=${NPM_AUTH_TOKEN}
       - npm install
       - gem install github_changelog_generator
-      - git remote rm origin
-      - git remote add origin https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix
+      # - git remote rm origin
+      # - git remote add origin https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix
       - make release
       # - make changelog
       # - make push-changelog
