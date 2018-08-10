@@ -10,10 +10,14 @@ stages:
   publish:
     image: node:8-alpine
     commands:
-      - apk --no-cache add git python ruby-dev
+      - apk --no-cache add git python ruby-dev gem
       - npm install
       - gem install github_changelog_generator
       - make release
       - make changelog
       - make push-changelog
+    when:
+      status == 'succeeded' &&
+      server == 'gocd' &&
+      branch == 'master'
 
