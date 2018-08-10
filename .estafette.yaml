@@ -8,7 +8,7 @@ labels:
 
 stages:
   publish:
-    image: starefossen/ruby-node
+    image: scardon/ruby-node-alpine
     commands:
       - apk --no-cache add git python
       - npm install
