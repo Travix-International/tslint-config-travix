@@ -10,7 +10,7 @@ stages:
   publish:
     image: scardon/ruby-node-alpine
     commands:
-      - apk --no-cache add git python
+      - apk --no-cache add git python make
       - npm install
       - gem install github_changelog_generator
       - make release
