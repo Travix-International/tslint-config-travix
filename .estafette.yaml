@@ -8,9 +8,9 @@ labels:
 
 stages:
   publish:
-    image: node:8-alpine
+    image: starefossen/ruby-node
     commands:
-      - apk --no-cache add git python ruby-dev gem
+      - apk --no-cache add git python
       - npm install
       - gem install github_changelog_generator
       - make release
