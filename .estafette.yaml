@@ -15,6 +15,7 @@ stages:
       NPM_PACKAGE_VERSION: 'patch'
     commands:
       - apk --no-cache add git python make
+      - git remote set-url origin https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix
       - npm install
       - gem install github_changelog_generator
       - make release
