@@ -11,8 +11,8 @@ stages:
     image: scardon/ruby-node-alpine
     commands:
       - apk --no-cache add git python make
-      - echo "NPM_TOKEN: ${NPM_AUTH_TOKEN}"
-      # - env
+      # - echo "NPM_TOKEN: ${NPM_AUTH_TOKEN}"
+      - env
       - export NPM_PACKAGE_VERSION=$NPM_PACKAGE_VERSION
       - npm install
       - gem install github_changelog_generator
