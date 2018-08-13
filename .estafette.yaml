@@ -17,7 +17,7 @@ stages:
       GIT_USER_EMAIL: 'yurist38@mail.ru'
     commands:
       - apk --no-cache add git python make
-      - git remote set-url origin https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix
+      # - git remote set-url origin https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix
       - git config user.name "${GIT_USER_NAME}"
       - git config user.email "${GIT_USER_EMAIL}"
       - npm install
