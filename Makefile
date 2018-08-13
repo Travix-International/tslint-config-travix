@@ -11,6 +11,7 @@ push-changelog:
 	git push origin master
 
 release:
+	env
 	echo "Releasing version: ${NPM_PACKAGE_VERSION}"
 	git checkout master
 	git pull origin master
