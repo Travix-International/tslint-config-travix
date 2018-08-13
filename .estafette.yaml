@@ -14,6 +14,7 @@ stages:
       GITHUB_API_TOKEN: "${GITHUB_API_TOKEN}"
       NPM_PACKAGE_VERSION: "${NPM_PACKAGE_VERSION}"
     commands:
+      - env
       - apk --no-cache add git python make
       - npm install
       - gem install github_changelog_generator
