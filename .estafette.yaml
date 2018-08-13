@@ -13,9 +13,13 @@ stages:
       NPM_AUTH_TOKEN: estafette.secret(TRyywCkeoelfgARr.jtg-Hx3Wh678ZCWOocOCy1uk-XQYt2dE44RunaOSX2WftRsBxTz3my13Ljr6evWQncACiQ==)
       GITHUB_API_TOKEN: estafette.secret(hmZThAIN98k-1Cyd.YIRA_g9iZeaNzQT39xWuH0o4_kwizQTO0ysC54kMQ95YvxRvt3vthzsFrfpQPwoCHb_rDy7K2F4=)
       NPM_PACKAGE_VERSION: 'patch'
+      GIT_USER_NAME: 'Yuri Drabik'
+      GIT_USER_EMAIL: 'yurist38@mail.ru'
     commands:
       - apk --no-cache add git python make
       - git remote set-url origin https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix
+      - git config user.name "${GIT_USER_NAME}"
+      - git config user.email "${GIT_USER_EMAIL}"
       - npm install
       - gem install github_changelog_generator
       - make release
