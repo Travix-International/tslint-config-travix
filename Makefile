@@ -11,7 +11,7 @@ push-changelog:
 	git push origin master
 
 release:
-	# echo "Releasing version: ${NPM_PACKAGE_VERSION}"
+	echo "Releasing version: ${NPM_PACKAGE_VERSION}"
 	git checkout master
 	git pull origin master
 	npm version ${NPM_PACKAGE_VERSION}
