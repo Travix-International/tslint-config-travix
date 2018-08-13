@@ -14,6 +14,7 @@ stages:
       GITHUB_API_TOKEN: estafette.secret(hmZThAIN98k-1Cyd.YIRA_g9iZeaNzQT39xWuH0o4_kwizQTO0ysC54kMQ95YvxRvt3vthzsFrfpQPwoCHb_rDy7K2F4=)
       NPM_PACKAGE_VERSION: 'patch'
     commands:
+      - export MY_TEMP_VAR=${GITHUB_API_TOKEN}
       - apk --no-cache add git python make
       - npm install
       - gem install github_changelog_generator
