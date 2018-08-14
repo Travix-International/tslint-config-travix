@@ -33,6 +33,5 @@ stages:
       - git pull && git push --follow-tags
     when:
       status == 'succeeded' &&
-      server == 'gocd' &&
       branch == 'master'
 
