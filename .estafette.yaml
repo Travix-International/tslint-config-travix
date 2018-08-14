@@ -19,12 +19,11 @@ stages:
     commands:
       - apk --no-cache add git python make
       - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
-      - npm install
+      - npm ci
       - gem install github_changelog_generator
       - git config user.name "${GIT_USER_NAME}"
       - git config user.email "${GIT_USER_EMAIL}"
-      - git checkout master
-      - git pull
+      - git checkout master && git pull && git checkout .
       - npm version ${NPM_PACKAGE_VERSION}
       - npm publish
       - github_changelog_generator -t ${GITHUB_API_TOKEN}
