@@ -1,0 +1,38 @@
+builder:
+  track: stable
+
+labels:
+  app: tslint-config-travix
+  team: origami
+  language: nodejs
+
+stages:
+  release:
+    image: scardon/ruby-node-alpine
+    env:
+      NPM_AUTH_TOKEN: estafette.secret(zLzuU8X5xWRB_vm6.K6U64ManpNZ89nc6GGPI7b-fzy2R_Vuhs-veDE47S1ztm_JxJqRGuHznAbtoUat4q_UXhQ==)
+      GITHUB_API_TOKEN: estafette.secret(qnT0Xj4IaUsYKb4c.wmhSyuv6-kvK0LuvAQAe3NovxitW1ORMBohzfiV5u9ZrCQvOix9FEshNiyiR8htQ070KeLli9Mo=)
+      NPM_PACKAGE_VERSION: 'patch'
+      GIT_USER_NAME: 'travix-frontend-services'
+      GIT_USER_EMAIL: 'frontend-services@travix.com'
+      CHANGELOG_COMMIT_MESSAGE: 'Update changelog'
+    commands:
+      - apk --no-cache add git python make
+      - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
+      - npm ci
+      - gem install github_changelog_generator
+      - git config user.name "${GIT_USER_NAME}"
+      - git config user.email "${GIT_USER_EMAIL}"
+      - git config remote.origin.url "https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix"
+      - git checkout master && git pull && git checkout .
+      - npm version ${NPM_PACKAGE_VERSION}
+      - npm publish
+      - github_changelog_generator -t ${GITHUB_API_TOKEN}
+      - git add CHANGELOG.md
+      - git commit -m "${CHANGELOG_COMMIT_MESSAGE}"
+      - git push --follow-tags
+    when:
+      status == 'succeeded' &&
+      server == 'gocd' &&
+      branch == 'master'
+
