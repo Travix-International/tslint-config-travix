@@ -23,6 +23,7 @@ stages:
       - gem install github_changelog_generator
       - git config user.name "${GIT_USER_NAME}"
       - git config user.email "${GIT_USER_EMAIL}"
+      - git config remote.origin.url "https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix"
       - git checkout master && git pull && git checkout .
       - npm version ${NPM_PACKAGE_VERSION}
       - npm publish
