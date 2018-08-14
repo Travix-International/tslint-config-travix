@@ -1,6 +1,6 @@
 {
   "name": "tslint-config-travix",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "TSLint configuration from Travix",
   "main": "index.js",
   "scripts": {
