@@ -23,13 +23,14 @@ stages:
       - gem install github_changelog_generator
       - git config user.name "${GIT_USER_NAME}"
       - git config user.email "${GIT_USER_EMAIL}"
-      - echo "Releasing version: ${NPM_PACKAGE_VERSION}"
+      - git checkout master
+      - git pull
       - npm version ${NPM_PACKAGE_VERSION}
       - npm publish
       - github_changelog_generator -t ${GITHUB_API_TOKEN}
       - git add CHANGELOG.md
       - git commit -m "${CHANGELOG_COMMIT_MESSAGE}"
-	    - git push origin master --follow-tags
+	    - git push --follow-tags
     when:
       status == 'succeeded' &&
       server == 'gocd' &&
