@@ -15,16 +15,16 @@ stages:
       NPM_PACKAGE_VERSION: 'patch'
       GIT_USER_NAME: 'Yuri Drabik'
       GIT_USER_EMAIL: 'yurist38@mail.ru'
+      CHANGELOG_COMMIT_MESSAGE: 'Update changelog'
     commands:
       - apk --no-cache add git python make
-      # - git remote set-url origin https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix
-      - git config user.name "${GIT_USER_NAME}"
-      - git config user.email "${GIT_USER_EMAIL}"
+      - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
       - npm install
       - gem install github_changelog_generator
+      - make configure-git
       - make release
-      # - make changelog
-      # - make push-changelog
+      - make changelog
+      - make push-changelog
     when:
       status == 'succeeded' &&
       server == 'gocd' &&
