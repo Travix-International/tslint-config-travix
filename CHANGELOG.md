@@ -1,8 +1,5 @@
 # Change Log
 
-## [v0.0.12](https://github.com/Travix-International/tslint-config-travix/tree/v0.0.15) (2018-08-14)
-[Full Changelog](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.14...v0.0.15)
-
 ## [v0.0.12](https://github.com/Travix-International/tslint-config-travix/tree/v0.0.12) (2018-08-14)
 [Full Changelog](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.11...v0.0.12)
 
