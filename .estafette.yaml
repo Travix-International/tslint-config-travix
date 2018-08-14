@@ -30,7 +30,7 @@ stages:
       - github_changelog_generator -t ${GITHUB_API_TOKEN}
       - git add CHANGELOG.md
       - git commit -m "${CHANGELOG_COMMIT_MESSAGE}"
-	    - git push --follow-tags
+      - git push --follow-tags
     when:
       status == 'succeeded' &&
       server == 'gocd' &&
