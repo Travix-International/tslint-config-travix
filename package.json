@@ -14,7 +14,10 @@
     "tslint",
     "typescript"
   ],
-  "author": "Travix International <frontend-services@travix.com>",
+  "author": {
+    "name": "Travix International",
+    "url": "https://travix.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Travix-International/tslint-config-travix/issues"
