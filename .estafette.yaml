@@ -18,6 +18,7 @@ stages:
       CHANGELOG_COMMIT_MESSAGE: 'Update changelog'
     commands:
       - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
+      - echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" >> .npmrc
       - npm ci
       - git config user.name "${GIT_USER_NAME}"
       - git config user.email "${GIT_USER_EMAIL}"
