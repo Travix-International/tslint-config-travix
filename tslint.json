@@ -1,0 +1,10 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-react"],
+  "defaultSeverity": "warning",
+  "linterOptions": {
+    "exclude": [
+      "internals/**/*.js",
+      "node_modules/**/*.ts"
+    ]
+  }
+}
