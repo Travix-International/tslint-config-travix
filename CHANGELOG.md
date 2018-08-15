@@ -1,5 +1,16 @@
 # Change Log
 
+## [Unreleased](https://github.com/Travix-International/tslint-config-travix/tree/HEAD)
+
+[Full Changelog](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.22...HEAD)
+
+**Merged pull requests:**
+
+- Add tslint config [\#1](https://github.com/Travix-International/tslint-config-travix/pull/1) ([HarrisSidiropoulos](https://github.com/HarrisSidiropoulos))
+
+## [v0.0.22](https://github.com/Travix-International/tslint-config-travix/tree/v0.0.22) (2018-08-15)
+[Full Changelog](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.21...v0.0.22)
+
 ## [v0.0.21](https://github.com/Travix-International/tslint-config-travix/tree/v0.0.21) (2018-08-15)
 [Full Changelog](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.20...v0.0.21)
 
