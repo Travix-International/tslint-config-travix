@@ -8,7 +8,7 @@ labels:
 
 stages:
   release:
-    image: scardon/ruby-node-alpine
+    image: travix/npm-agent:latest
     env:
       NPM_AUTH_TOKEN: estafette.secret(zLzuU8X5xWRB_vm6.K6U64ManpNZ89nc6GGPI7b-fzy2R_Vuhs-veDE47S1ztm_JxJqRGuHznAbtoUat4q_UXhQ==)
       GITHUB_API_TOKEN: estafette.secret(qnT0Xj4IaUsYKb4c.wmhSyuv6-kvK0LuvAQAe3NovxitW1ORMBohzfiV5u9ZrCQvOix9FEshNiyiR8htQ070KeLli9Mo=)
@@ -17,7 +17,6 @@ stages:
       GIT_USER_EMAIL: 'frontend-services@travix.com'
       CHANGELOG_COMMIT_MESSAGE: 'Update changelog'
     commands:
-      - apk --no-cache add git python make
       - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
       - npm ci
       - gem install github_changelog_generator
