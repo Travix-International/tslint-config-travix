@@ -17,7 +17,7 @@ stages:
       GIT_AUTHOR_EMAIL: 'frontend-services@travix.com'
       GIT_COMMITTER_NAME: 'travix-frontend-services'
       GIT_COMMITTER_EMAIL: 'frontend-services@travix.com'
-      GIT_CREDENTIALS: estafette.secret(KIos7STuK-Fk-RpS.Tk-pbLA13uMSlp1EZ6W21sI9WYnnr-FjrQvYECaKDGWLnc8q6T6459ITkmZBMcLbvXZPLA==)
+      GIT_CREDENTIALS: "${GITHUB_API_TOKEN}:x-oauth-basic"
       # CHANGELOG_COMMIT_MESSAGE: 'Update changelog'
     commands:
       # - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
