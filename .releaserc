@@ -1,3 +1,19 @@
 {
-  "branch": "test"
+  "branch": "test",
+  "dryRun": true,
+  "noCi": false,
+  "verifyConditions": [
+    "@semantic-release/npm",
+    "@semantic-release/github"
+  ],
+  "publish": [
+    "@semantic-release/npm",
+    "@semantic-release/github"
+  ],
+  "success": [
+    "@semantic-release/github"
+  ],
+  "fail": [
+    "@semantic-release/github"
+  ]
 }
