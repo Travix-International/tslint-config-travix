@@ -1,6 +1,7 @@
 {
   "branch": "test",
   "noCi": false,
+  "debug": true,
   "verifyConditions": [
     "@semantic-release/npm",
     "@semantic-release/github"
