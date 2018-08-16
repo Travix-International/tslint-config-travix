@@ -1,6 +1,5 @@
 {
   "branch": "test",
-  "dryRun": true,
   "noCi": false,
   "verifyConditions": [
     "@semantic-release/npm",
