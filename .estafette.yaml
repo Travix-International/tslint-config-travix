@@ -10,27 +10,32 @@ stages:
   release:
     image: travix/npm-agent:latest
     env:
-      NPM_AUTH_TOKEN: estafette.secret(zLzuU8X5xWRB_vm6.K6U64ManpNZ89nc6GGPI7b-fzy2R_Vuhs-veDE47S1ztm_JxJqRGuHznAbtoUat4q_UXhQ==)
-      GITHUB_API_TOKEN: estafette.secret(qnT0Xj4IaUsYKb4c.wmhSyuv6-kvK0LuvAQAe3NovxitW1ORMBohzfiV5u9ZrCQvOix9FEshNiyiR8htQ070KeLli9Mo=)
+      NPM_TOKEN: estafette.secret(zLzuU8X5xWRB_vm6.K6U64ManpNZ89nc6GGPI7b-fzy2R_Vuhs-veDE47S1ztm_JxJqRGuHznAbtoUat4q_UXhQ==)
+      GITHUB_TOKEN: estafette.secret(qnT0Xj4IaUsYKb4c.wmhSyuv6-kvK0LuvAQAe3NovxitW1ORMBohzfiV5u9ZrCQvOix9FEshNiyiR8htQ070KeLli9Mo=)
       NPM_PACKAGE_VERSION: 'patch'
-      GIT_USER_NAME: 'travix-frontend-services'
-      GIT_USER_EMAIL: 'frontend-services@travix.com'
-      CHANGELOG_COMMIT_MESSAGE: 'Update changelog'
+      GIT_AUTHOR_NAME: 'travix-frontend-services'
+      GIT_AUTHOR_EMAIL: 'frontend-services@travix.com'
+      GIT_COMMITTER_NAME: 'travix-frontend-services'
+      GIT_COMMITTER_EMAIL: 'frontend-services@travix.com'
+      GIT_CREDENTIALS: 'https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix'
+      # CHANGELOG_COMMIT_MESSAGE: 'Update changelog'
     commands:
-      - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
-      - npm config set "//registry.npmjs.org/:_authToken" "${NPM_AUTH_TOKEN}"
+      # - if [ "$(git log -1 --pretty=%B)" == "${CHANGELOG_COMMIT_MESSAGE}" ]; then exit 0; fi # we don't need to release if last commit was a changelog
+      # - npm config set "//registry.npmjs.org/:_authToken" "${NPM_AUTH_TOKEN}"
+      # - npm ci
+      # - git config user.name "${GIT_USER_NAME}"
+      # - git config user.email "${GIT_USER_EMAIL}"
+      # - git config remote.origin.url "https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix"
+      # - git checkout master && git pull
+      # - npm version ${NPM_PACKAGE_VERSION}
+      # - npm publish
+      # - github_changelog_generator -t ${GITHUB_API_TOKEN}
+      # - git add CHANGELOG.md
+      # - git commit -m "${CHANGELOG_COMMIT_MESSAGE}"
+      # - git push --follow-tags
       - npm ci
-      - git config user.name "${GIT_USER_NAME}"
-      - git config user.email "${GIT_USER_EMAIL}"
-      - git config remote.origin.url "https://${GITHUB_API_TOKEN}:x-oauth-basic@github.com/Travix-International/tslint-config-travix"
-      - git checkout master && git pull
-      - npm version ${NPM_PACKAGE_VERSION}
-      - npm publish
-      - github_changelog_generator -t ${GITHUB_API_TOKEN}
-      - git add CHANGELOG.md
-      - git commit -m "${CHANGELOG_COMMIT_MESSAGE}"
-      - git push --follow-tags
+      - npx semantic-release
     when:
       status == 'succeeded' &&
-      branch == 'master'
+      branch == 'test'
 
