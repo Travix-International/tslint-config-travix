@@ -5,3 +5,11 @@ Travix configuration for [TSLint](https://palantir.github.io/tslint/)
 * `tslint:recommended`
 * `tslint-config-prettier`
 * `tslint-react`
+
+## Usage
+Create a file `.tslint.json` with following content:
+```
+{
+  "extends": "tslint-config-travix"
+}
+```
