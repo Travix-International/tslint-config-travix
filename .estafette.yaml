@@ -34,7 +34,7 @@ stages:
       # - git commit -m "${CHANGELOG_COMMIT_MESSAGE}"
       # - git push --follow-tags
       - npm ci
-      - npx semantic-release
+      - npx semantic-release --ci false
     when:
       status == 'succeeded' &&
       branch == 'test'
