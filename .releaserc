@@ -6,6 +6,7 @@
     "@semantic-release/github"
   ],
   "prepare": [
+    "some-plugin",
     "@semantic-release/npm"
   ],
   "publish": [
