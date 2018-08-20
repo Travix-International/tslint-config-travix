@@ -18,7 +18,7 @@ stages:
       GIT_COMMITTER_EMAIL: 'frontend-services@travix.com'
     commands:
       - npm ci
-      - npx semantic-release
+      - npx semantic-release --no-ci
     when:
       status == 'succeeded' &&
       branch == 'master'

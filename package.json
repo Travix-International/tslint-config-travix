@@ -31,7 +31,6 @@
     "tslint-react": "~3.6.0"
   },
   "release": {
-    "analyzeCommits": "simple-commit-message",
-    "noCi": false
+    "analyzeCommits": "simple-commit-message"
   }
 }
