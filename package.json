@@ -32,6 +32,11 @@
   },
   "release": {
     "analyzeCommits": "simple-commit-message",
-    "noCi": true
+    "noCi": true,
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   }
 }
