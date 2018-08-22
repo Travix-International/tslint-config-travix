@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Travix-International/tslint-config-travix#readme",
   "devDependencies": {
     "@semantic-release/changelog": "3.0.0",
+    "@semantic-release/git": "7.0.1",
     "semantic-release": "15.9.8",
     "simple-commit-message": "4.0.3",
     "tslint": "5.11.0",
