@@ -1,6 +1,5 @@
 ## [0.0.30](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.29...v0.0.30) (2018-08-22)
 
-
 ### Bug Fixes
 
 * added missing dep ([f03486b](https://github.com/Travix-International/tslint-config-travix/commit/f03486b))
@@ -9,16 +8,6 @@
 * update deps ([304244a](https://github.com/Travix-International/tslint-config-travix/commit/304244a))
 * update readme ([3d8c28a](https://github.com/Travix-International/tslint-config-travix/commit/3d8c28a))
 * update readme ([98edbf1](https://github.com/Travix-International/tslint-config-travix/commit/98edbf1))
-
-# Change Log
-
-## [Unreleased](https://github.com/Travix-International/tslint-config-travix/tree/HEAD)
-
-[Full Changelog](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.22...HEAD)
-
-**Merged pull requests:**
-
-- Add tslint config [\#1](https://github.com/Travix-International/tslint-config-travix/pull/1) ([HarrisSidiropoulos](https://github.com/HarrisSidiropoulos))
 
 ## [v0.0.22](https://github.com/Travix-International/tslint-config-travix/tree/v0.0.22) (2018-08-15)
 [Full Changelog](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.21...v0.0.22)
