@@ -1,3 +1,5 @@
+# [0.1.0](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.30...v0.1.0) (2018-09-14)
+
 ## [0.0.30](https://github.com/Travix-International/tslint-config-travix/compare/v0.0.29...v0.0.30) (2018-08-22)
 
 ### Bug Fixes
