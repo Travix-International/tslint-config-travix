@@ -4,7 +4,8 @@
   "description": "TSLint configuration from Travix",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:json": "eslint tslint.json"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
   "devDependencies": {
     "@semantic-release/changelog": "3.0.0",
     "@semantic-release/git": "7.0.1",
+    "eslint": "5.6.0",
+    "eslint-plugin-json": "1.2.1",
     "semantic-release": "15.9.8",
     "simple-commit-message": "4.0.3",
     "tslint": "5.11.0",

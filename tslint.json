@@ -54,9 +54,23 @@
         "variable-declaration": "onespace"
       }
     ],
-    "indent": [true, "spaces", 2],
-    "variable-name": [true, "allow-leading-underscore", "allow-pascal-case"],
-    "trailing-comma": false,
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
     "interface-name": false,
     "no-console": false,
     "no-import-side-effect": true
