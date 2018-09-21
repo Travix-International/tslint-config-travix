@@ -18,6 +18,7 @@ stages:
       GIT_COMMITTER_EMAIL: 'frontend-services@travix.com'
     commands:
       - npm ci
+      - npm run lint:json
       - npx semantic-release
     when:
       status == 'succeeded' &&
